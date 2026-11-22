@@ -51,7 +51,7 @@ _KLEINKIND = re.compile(r'(bis|unter|bis zu|bis einschl\.?)\s*[1-6]\s*(j\b|jahr)
 _STOER = re.compile(r'ermäßig|ermässig|erm\.|gruppe|schul|student|senior|rentner|gdb|behindert|'
                     r'jahres|saison|abo|zehner|10er|abend|führung|kurs|miete|park|zzgl|teilnehmer|'
                     r'kombi|gutschein|workshop|geburtstag|gäste|karte\s*\(|%|mo\.|fr\.|sa\.|so\.|'
-                    r'stunde|min\b|verleih|mitglied', re.I)
+                    r'stunde|min\b|verleih|mitglied|konzert|veranstaltung|saisonkarte|dauerkarte', re.I)
 _BETRAG = re.compile(r'(?:€\s*(\d{1,3}(?:[.,]\d{1,2})?)|(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:€|euro\b|eur\b))', re.I)
 _NICHT_AUSFLUG = re.compile(r'verleih|vermietung|radstation|bücherei|bibliothek|e-bike|ladestation|'
                             r'tourist|information|hotel|restaurant|café|cafe|shop|laden', re.I)
