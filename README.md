@@ -8,6 +8,7 @@ GitHub Pages stellt sie bereit:
 |---|---|
 | `docs/events.json` | kommende Familien-/Freizeit-Events (NRW, nächste 120 Tage) |
 | `docs/orte.json` | Eintritt und Öffnungszeiten von Ausflugszielen (NRW) |
+| `docs/auswahl.json` | kuratierte Auswahl der Ausflugsziele (Koordinaten-Schlüssel, Regeln in der App: `tool/auswahl.py`) |
 | `docs/fotos.json` | Foto je Ort (Wikidata P18 / Wikimedia Commons, Lizenz + Urheber je Datei) |
 | `docs/fotos_umkreis.json` | weitere Fotos je Ort (Commons-Umkreissuche, Titel passt zum Ortsnamen) |
 
