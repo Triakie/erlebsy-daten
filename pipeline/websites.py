@@ -89,6 +89,9 @@ def preis_aus_web(zeilen):
         if len(zl) > 140 or _NICHT.search(zl):
             continue
         b = _betrag(zl)
+        # Kleinkinder („bis 3/6 Jahre frei“) sind nicht der Kinderpreis.
+        if re.search(r'(bis|unter|bis zu)\s*[1-6]\s*(j\b|jahr)|kleinkind|baby', zl):
+            continue
         kind_frei = re.search(r'(kinder|jugendliche|unter 1[0-9]|bis 1[0-9] jahre?).{0,40}'
                               r'(frei\b|kostenlos|kostenfrei|0,00|0 €)', zl)
         if kind_frei and erg['kind'] is None:
