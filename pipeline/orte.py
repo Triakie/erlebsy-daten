@@ -43,8 +43,36 @@ def _wert(m):
     return None
 
 
-def preis_aus_text(text):
-    """→ dict(erw, kind, familie, frei, text, url) – Zahlen nur bei klarer Zuordnung."""
+_ERW = re.compile(r'^(eintritt\s*)?(einzelkarte\s*)?(erwachsene?r?|erw\.)\b', re.I)
+_KIND = re.compile(r'^(eintritt\s*)?(einzelkarte\s*)?(kinder(\s*(und|&|/)\s*jugendliche)?|jugendliche|kind)\b', re.I)
+_FAM = re.compile(r'^(eintritt\s*)?famili(en|e)(karte|ticket|tarif)?\b', re.I)
+_KLEINKIND = re.compile(r'(bis|unter|bis zu|bis einschl\.?)\s*[1-6]\s*(j\b|jahr)|0\s*[-–]\s*[1-5]\s*j|'
+                        r'kleinkind|baby', re.I)
+_STOER = re.compile(r'ermäßig|ermässig|erm\.|gruppe|schul|student|senior|rentner|gdb|behindert|'
+                    r'jahres|saison|abo|zehner|10er|abend|führung|kurs|miete|park|zzgl|teilnehmer|'
+                    r'kombi|gutschein|workshop|geburtstag|gäste|karte\s*\(|%|mo\.|fr\.|sa\.|so\.|'
+                    r'stunde|min\b|verleih|mitglied', re.I)
+_BETRAG = re.compile(r'(?:€\s*(\d{1,3}(?:[.,]\d{1,2})?)|(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:€|euro\b|eur\b))', re.I)
+_NICHT_AUSFLUG = re.compile(r'verleih|vermietung|radstation|bücherei|bibliothek|e-bike|ladestation|'
+                            r'tourist|information|hotel|restaurant|café|cafe|shop|laden', re.I)
+
+
+def _betraege(z):
+    out = []
+    for m in _BETRAG.finditer(z):
+        w = float((m.group(1) or m.group(2)).replace(',', '.'))
+        if 0 <= w <= 150:
+            out.append(w)
+    return out
+
+
+def preis_aus_text(text, name=''):
+    """→ dict(erw, kind, familie, frei, text, url).
+
+    Streng (nie raten): Zahlen nur aus Zeilen, die mit „Erwachsene …“,
+    „Kinder …“ bzw. „Familie …“ BEGINNEN, genau einen Betrag enthalten und
+    keine Ermäßigungs-/Gruppen-/Sonderangaben. Alles andere bleibt Hinweistext.
+    """
     if not text:
         return None
     t = text.strip()
@@ -52,58 +80,51 @@ def preis_aus_text(text):
     if url:
         url = url.rstrip('.,);')
     erg = {'erw': None, 'kind': None, 'familie': None, 'frei': False}
-    zeilen = [z.strip() for z in re.split(r'[\n;•]+', t) if z.strip()]
-    for z in zeilen:
-        zl = z.lower()
-        m = re.search(_EURO, zl)
-        betrag = _wert(m) if m else None
-        if betrag is not None and betrag > 500:
+    roh = [z.strip() for z in re.split(r'[\n;•|]+|,\s+(?=[A-Za-zÄÖÜäöü])', t) if z.strip()]
+    zeilen = []
+    for z in roh:  # „Erwachsene:“ + nächste Zeile „4 €“ zusammenführen
+        if zeilen and zeilen[-1].endswith(':'):
+            zeilen[-1] = f'{zeilen[-1]} {z}'
+        else:
+            zeilen.append(z)
+    ausflug = not _NICHT_AUSFLUG.search(name)
+    for z in zeilen if ausflug else []:
+        if len(z) > 70 or _STOER.search(z):
             continue
-        if re.search(r'ermäßigt|ermässigt|gruppe|schüler|student|senior|jahreskarte|saisonkarte|'
-                     r'abo|zehner|10er|abend|führung|kurs|miete|parken|parkplatz|stunde', zl) \
-                and not re.search(r'^\s*(eintritt\s*)?(erwachsene|kinder)', zl):
-            continue
-        if betrag == 0 and re.search(r'frei|kostenlos|kostenfrei|eintritt', zl) and not re.search(
-                r'kind|jugend|für|unter|bis|mitglied|tag\b|nur', zl):
-            erg['frei'] = True
-            continue
-        if betrag is None:
-            if re.search(r'kinder.{0,40}(frei|kostenlos|kostenfrei|freien eintritt)', zl):
+        b = _betraege(z)
+        frei_kind = re.search(r'\b(frei|kostenlos|kostenfrei|freier eintritt)\b', z, re.I)
+        if _KIND.match(z) and not _KLEINKIND.search(z):
+            if len(b) == 1:
+                erg['kind'] = b[0] if erg['kind'] is None else max(erg['kind'], b[0])
+            elif not b and frei_kind and erg['kind'] is None:
                 erg['kind'] = 0.0
-            continue
-        if re.search(r'famil', zl) and erg['familie'] is None:
-            erg['familie'] = betrag
-        elif re.search(r'kind|jugend|unter \d+|bis \d+ jahre', zl) and erg['kind'] is None:
-            erg['kind'] = betrag
-        elif re.search(r'erwachsen|einzelkarte|eintritt|tageskarte|person', zl) and erg['erw'] is None:
-            erg['erw'] = betrag
+        elif _FAM.match(z) and len(b) == 1 and erg['familie'] is None:
+            erg['familie'] = b[0]
+        elif _ERW.match(z) and len(b) == 1 and erg['erw'] is None and b[0] > 0:
+            erg['erw'] = b[0]
     # „frei“ nur bei bedingungsloser Aussage: „Freier Eintritt für Kölner am
     # KölnTag“ / „frei unter 18“ / „Mitglieder frei“ sind KEIN freier Eintritt.
     bedingt = re.search(r'\bfür\b|\bunter\b|\bbis\b|jeden|mitglied|kinder|jugend|tag\b|'
-                        r'kölntag|\bam\b|\bnur\b|ermäßig|führung|außer|ausgenommen|'
+                        r'kölntag|\bam\b|\bnur\b|ermäßig|führung|außer|ausgenommen|spende|'
                         r'sonderausstellung|variier|teilweise|einige|bestimmte', t.lower())
-    frei_text = None if bedingt or len(t) > 80 else re.search(
+    frei_text = None if bedingt or len(t) > 80 or not ausflug else re.search(
         r'eintritt (ist )?frei|freier eintritt|kostenfrei|kostenlos|'
         r'ohne eintritt|frei zugänglich|eintritt: ?0([.,]0+)? ?€?$', t.lower())
-    if erg['frei'] and (erg['erw'] or erg['familie']):
-        erg['frei'] = False  # widersprüchlich → Zahlen gelten, „frei“ nicht
-    if re.search(r'spende', t.lower()):
-        erg['frei'] = False  # „frei, Spende erbeten“ → nicht als gratis werten
-        frei_text = None
     if frei_text and erg['erw'] is None and erg['familie'] is None and \
             not re.search(r'[1-9]\d*(?:[.,]\d+)? ?€|€ ?[1-9]', t):
         erg['frei'] = True
+    # Plausibilität: Kind teurer als Erwachsene oder Familie > 80 € → unsicher,
+    # dann lieber gar keine Zahl.
+    if erg['kind'] is not None and erg['erw'] is not None and erg['kind'] > erg['erw']:
+        erg['kind'] = erg['erw'] = None
+    if erg['familie'] is not None and erg['familie'] > 80:
+        erg['familie'] = None
     kurz = ' '.join(t.split())
     if re.search(r'€|euro|eintritt|preis|frei|kostenlos|kostenfrei|spende|gebühr|tarif|ticket', kurz.lower()):
         erg['text'] = kurz[:160] + ('…' if len(kurz) > 160 else '')
     else:
         erg['text'] = None
     erg['url'] = url
-    if not any([erg['erw'] is not None, erg['kind'] is not None, erg['familie'] is not None,
-                erg['frei'], url]):
-        # Nur Fließtext ohne verwertbare Angabe („Preise auf Anfrage“) → Hinweis behalten.
-        if not re.search(r'\d', kurz) and len(kurz) < 12:
-            return None
     return erg
 
 
@@ -201,7 +222,7 @@ def main():
         if lat is None or not name:
             zaehler['ohne_daten'] += 1
             continue
-        preis = preis_aus_text(g.et4_text(it, 'PRICE_INFO'))
+        preis = preis_aus_text(g.et4_text(it, 'PRICE_INFO'), name)
         zeiten = zeiten_osm(it, heute)
         if preis and not any(preis.get(k) not in (None, False) for k in ('erw', 'kind', 'familie', 'frei', 'text', 'url')):
             preis = None

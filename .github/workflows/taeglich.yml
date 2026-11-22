@@ -42,5 +42,7 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
+            # Falls in der Zwischenzeit jemand gepusht hat: neue Daten oben drauf.
+            git pull --rebase -X theirs origin main
             git push
           fi
