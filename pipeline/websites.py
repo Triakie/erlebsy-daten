@@ -93,7 +93,7 @@ def preis_aus_web(zeilen):
         if re.search(r'(bis|unter|bis zu)\s*[1-6]\s*(j\b|jahr)|kleinkind|baby', zl):
             continue
         kind_frei = re.search(r'(kinder|jugendliche|unter 1[0-9]|bis 1[0-9] jahre?).{0,40}'
-                              r'(frei\b|kostenlos|kostenfrei|0,00|0 €)', zl)
+                              r'(frei\b|kostenlos|kostenfrei|(?<![\d,.])0(?:[,.]00)?\s*€)', zl)
         if kind_frei and erg['kind'] is None:
             erg['kind'] = 0.0
             continue
