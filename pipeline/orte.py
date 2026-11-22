@@ -63,7 +63,8 @@ def preis_aus_text(text):
                      r'abo|zehner|10er|abend|führung|kurs|miete|parken|parkplatz|stunde', zl) \
                 and not re.search(r'^\s*(eintritt\s*)?(erwachsene|kinder)', zl):
             continue
-        if betrag == 0 and re.search(r'frei|kostenlos|kostenfrei|eintritt', zl) and not re.search(r'kind|jugend', zl):
+        if betrag == 0 and re.search(r'frei|kostenlos|kostenfrei|eintritt', zl) and not re.search(
+                r'kind|jugend|für|unter|bis|mitglied|tag\b|nur', zl):
             erg['frei'] = True
             continue
         if betrag is None:
@@ -76,8 +77,14 @@ def preis_aus_text(text):
             erg['kind'] = betrag
         elif re.search(r'erwachsen|einzelkarte|eintritt|tageskarte|person', zl) and erg['erw'] is None:
             erg['erw'] = betrag
-    frei_text = re.search(r'eintritt (ist )?frei|freier eintritt|kostenfrei|kostenlos|'
-                          r'ohne eintritt|frei zugänglich|eintritt: ?0([.,]0+)? ?€?$', t.lower())
+    # „frei“ nur bei bedingungsloser Aussage: „Freier Eintritt für Kölner am
+    # KölnTag“ / „frei unter 18“ / „Mitglieder frei“ sind KEIN freier Eintritt.
+    bedingt = re.search(r'\bfür\b|\bunter\b|\bbis\b|jeden|mitglied|kinder|jugend|tag\b|'
+                        r'kölntag|\bam\b|\bnur\b|ermäßig|führung|außer|ausgenommen|'
+                        r'sonderausstellung|variier|teilweise|einige|bestimmte', t.lower())
+    frei_text = None if bedingt or len(t) > 80 else re.search(
+        r'eintritt (ist )?frei|freier eintritt|kostenfrei|kostenlos|'
+        r'ohne eintritt|frei zugänglich|eintritt: ?0([.,]0+)? ?€?$', t.lower())
     if erg['frei'] and (erg['erw'] or erg['familie']):
         erg['frei'] = False  # widersprüchlich → Zahlen gelten, „frei“ nicht
     if re.search(r'spende', t.lower()):
