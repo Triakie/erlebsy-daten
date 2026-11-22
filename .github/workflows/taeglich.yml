@@ -1,0 +1,42 @@
+name: Daten täglich aktualisieren
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # täglich 03:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten
+  cancel-in-progress: false
+
+jobs:
+  holen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Events holen
+        run: python3 pipeline/events.py
+        continue-on-error: true
+      - name: Eintritt und Öffnungszeiten holen
+        run: python3 pipeline/orte.py
+        continue-on-error: true
+      - name: Prüfen
+        run: python3 pipeline/pruefen.py
+      - name: Änderungen speichern
+        run: |
+          git config user.name "erlebsy-daten-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/*.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
+            git push
+          fi
