@@ -15,7 +15,7 @@ concurrency:
 jobs:
   holen:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,6 +23,9 @@ jobs:
           python-version: '3.12'
       - name: Events holen
         run: python3 pipeline/events.py
+        continue-on-error: true
+      - name: Betreiber-Websites lesen (höchstens 300 pro Tag, je Website alle 30 Tage)
+        run: python3 pipeline/websites.py --max 300
         continue-on-error: true
       - name: Eintritt und Öffnungszeiten holen
         run: python3 pipeline/orte.py
@@ -34,6 +37,7 @@ jobs:
           git config user.name "erlebsy-daten-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/*.json
+          if [ -f pipeline/websites_stand.json ]; then git add pipeline/websites_stand.json; fi
           if git diff --cached --quiet; then
             echo "Keine Änderungen."
           else

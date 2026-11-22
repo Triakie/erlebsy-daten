@@ -207,7 +207,7 @@ def main():
             zaehler['frei'] += 1
         if zeiten:
             zaehler['mit_zeiten'] += 1
-        eintrag = {'id': f'nrw:{it.get("id")}', 'name': name, 'lat': lat, 'lon': lon,
+        eintrag = {'id': f'nrw:{it.get("id")}', 'quelle': 'tnrw', 'name': name, 'lat': lat, 'lon': lon,
                    'ort': it.get('city') or '', 'kategorien': kats[:3],
                    'web': it.get('web') if str(it.get('web', '')).startswith('http') else '',
                    'lizenz': g.et4_lizenz(it), 'geaendert': (it.get('changed') or '')[:10]}
@@ -218,15 +218,23 @@ def main():
         if zeiten:
             eintrag['zeiten'] = zeiten
         orte.append(eintrag)
+    # Von Betreiber-Websites gelesene Werte (pipeline/websites.py) anhängen –
+    # die App nimmt bei mehreren Treffern für denselben Ort den ersten (Tourismus NRW).
+    web = os.path.join(g.AUSGABE, 'websites.json')
+    if os.path.exists(web):
+        w = json.load(open(web, encoding='utf-8')).get('orte', [])
+        orte.extend(w)
+        zaehler['websites'] = len(w)
     if len(orte) < 500:
         print('Zu wenige Orte – docs/orte.json bleibt unverändert.', zaehler)
         sys.exit(1)
     daten = {
         'version': 1,
         'stand': g.jetzt_iso(),
-        'quelle': {'name': 'Tourismus NRW e.V. – Open Data Hub (destination.one)',
-                   'lizenz': 'je Eintrag (hier nur gemeinfrei/CC)',
-                   'url': 'https://tourismusverband.nrw/open-data-finder'},
+        'quellen': {'tnrw': {'name': 'Tourismus NRW e.V. – Open Data Hub (destination.one)',
+                             'lizenz': 'je Eintrag (hier nur gemeinfrei/CC)',
+                             'url': 'https://tourismusverband.nrw/open-data-finder'},
+                    'web': {'name': 'Website des Betreibers (automatisch gelesen, bitte prüfen)'}},
         'bericht': zaehler,
         'orte': orte,
     }

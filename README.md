@@ -16,6 +16,10 @@ GitHub Pages stellt sie bereit:
 - **Tourismus NRW e.V. – Open Data Hub** ([Open Data Finder](https://tourismusverband.nrw/open-data-finder)),
   Daten über destination.one/eT4. Übernommen werden nur Einträge mit offener Lizenz
   (gemeinfrei, CC0, CC BY, CC BY-SA); die Lizenz steht an jedem Eintrag (`lizenz`).
+- **Websites der Betreiber** (`pipeline/websites.py`): Liste der Ausflugsziele mit Website aus
+  OpenStreetMap (© OpenStreetMap-Mitwirkende, ODbL, `pipeline/websites_liste.json`). Gelesen werden nur
+  eindeutig beschriftete Preise (Erwachsene/Kinder/Familie) und strukturierte Öffnungszeiten (schema.org).
+  robots.txt wird beachtet, 1 Abruf pro Sekunde, höchstens 3 Seiten je Website, alle 30 Tage neu.
 - `pipeline/manuell.json`: eigene Recherche auf Betreiber-Websites (Quelle als Link je Eintrag).
 
 Übernommen werden nur Fakten (Titel, Datum, Uhrzeit, Ort, Koordinaten, Link, Preise, Öffnungszeiten) –

@@ -23,7 +23,7 @@ def darf(url):
         rp = urllib.robotparser.RobotFileParser()
         try:
             r = urllib.request.urlopen(urllib.request.Request(
-                basis + '/robots.txt', headers={'User-Agent': UA}), timeout=20)
+                basis + '/robots.txt', headers={'User-Agent': UA}), timeout=10)
             text = r.read().decode('utf-8', 'ignore')
             rp.parse(text.splitlines() if 'user-agent' in text.lower() else [])
         except Exception:  # noqa: BLE001 – keine robots.txt = erlaubt
@@ -32,14 +32,14 @@ def darf(url):
     return _robots[basis].can_fetch(UA, url)
 
 
-def hole(url, versuche=3, pause=2.0):
+def hole(url, versuche=3, pause=2.0, timeout=60):
     if not darf(url):
         raise PermissionError('robots.txt verbietet ' + url)
     fehler = None
     for i in range(versuche):
         try:
             r = urllib.request.urlopen(urllib.request.Request(
-                url, headers={'User-Agent': UA, 'Accept': 'application/json'}), timeout=60)
+                url, headers={'User-Agent': UA, 'Accept': 'application/json, text/html;q=0.9'}), timeout=timeout)
             return r.read()
         except Exception as e:  # noqa: BLE001
             fehler = e
