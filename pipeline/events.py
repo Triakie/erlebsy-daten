@@ -80,9 +80,21 @@ def _uhr(von, bis, ganztags):
 
 
 def _wochentage(tage):
-    k = {'Monday': 'Mo', 'Tuesday': 'Di', 'Wednesday': 'Mi', 'Thursday': 'Do',
-         'Friday': 'Fr', 'Saturday': 'Sa', 'Sunday': 'So'}
-    return ', '.join(k[t] for t in k if t in (tage or []))
+    """[Monday, Tuesday, Wednesday, Friday] → „Mo–Mi, Fr“."""
+    k = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    kurz = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+    idx = [i for i, t in enumerate(k) if t in (tage or [])]
+    teile, i = [], 0
+    while i < len(idx):
+        j = i
+        while j + 1 < len(idx) and idx[j + 1] == idx[j] + 1:
+            j += 1
+        if j - i >= 2:
+            teile.append(f'{kurz[idx[i]]}–{kurz[idx[j]]}')
+        else:
+            teile.extend(kurz[idx[x]] for x in range(i, j + 1))
+        i = j + 1
+    return ', '.join(teile)
 
 
 def termine_et4(item, heute, horizont):
@@ -108,7 +120,7 @@ def termine_et4(item, heute, horizont):
             if ende_d < heute or start_d > horizont:
                 continue
             tage = _wochentage(t.get('weekdays'))
-            if freq == 'Weekly' and tage and tage != 'Mo, Di, Mi, Do, Fr, Sa, So':
+            if freq == 'Weekly' and tage and tage != 'Mo–So':
                 uhr = (tage + (' ' + uhr if uhr else '')).strip()
             out.append((start_d, min(ende_d, horizont + dt.timedelta(days=365)), uhr))
         else:
@@ -118,13 +130,22 @@ def termine_et4(item, heute, horizont):
                 continue
             out.append((vd, bd, uhr))
     out.sort()
-    # gleiche Tage zusammenfassen, Anzahl begrenzen
-    eindeutig, gesehen = [], set()
-    for x in out:
-        if (x[0], x[1]) in gesehen:
+    # Gleicher Zeitraum mit mehreren Wochentags-Regeln (z. B. „So–Mi 11–21,
+    # Do, Fr 11–22“) → ein Termin mit allen Zeiten.
+    eindeutig, nach_tagen = [], {}
+    for von, bis, uhr in out:
+        # Zeiträume (Märkte, Ausstellungen) nach Ende zusammenfassen – die
+        # Wochentags-Regeln beginnen oft an verschiedenen Tagen.
+        k = ('bis', bis) if (bis - von).days >= 6 else (von, bis)
+        if k in nach_tagen:
+            alt = eindeutig[nach_tagen[k]]
+            uhr_neu = alt[2]
+            if uhr and uhr not in alt[2]:
+                uhr_neu = f'{alt[2]}; {uhr}' if alt[2] else uhr
+            eindeutig[nach_tagen[k]] = (min(von, alt[0]), bis, uhr_neu)
             continue
-        gesehen.add((x[0], x[1]))
-        eindeutig.append(x)
+        nach_tagen[k] = len(eindeutig)
+        eindeutig.append((von, bis, uhr))
     return eindeutig[:MAX_TERMINE_PRO_EVENT]
 
 
@@ -193,11 +214,12 @@ def aus_et4(items, heute, horizont):
         if not termine:
             gezaehlt['ohne_termin'] += 1
             continue
-        ort_name = ''
+        ort_name, veranstalter = '', ''
         for a in it.get('addresses') or []:
-            if a.get('rel') in ('venue', 'location', 'organizer') and a.get('name'):
+            if a.get('rel') in ('venue', 'location') and a.get('name') and not ort_name:
                 ort_name = a['name']
-                break
+            if a.get('rel') == 'organizer' and a.get('name') and not veranstalter:
+                veranstalter = a['name']
         for von, bis, uhr in termine:
             out.append({
                 'id': f'nrw:{it.get("id")}:{von.isoformat()}',
@@ -207,6 +229,7 @@ def aus_et4(items, heute, horizont):
                 'uhrzeit': uhr,
                 'ort': it.get('city') or '',
                 'ort_name': ort_name,
+                'veranstalter': veranstalter,
                 'strasse': it.get('street') or '',
                 'lat': lat, 'lon': lon,
                 'kategorie': kats[0] if kats else '',
@@ -277,8 +300,10 @@ def aus_manuell(heute):
 
 
 def _schluessel(e):
+    """Gleicher Titel, gleiches Ende, gleicher Ort (Stadt) = dasselbe Event."""
     t = re.sub(r'[^a-z0-9äöüß]', '', e['titel'].lower())
-    return f'{t}|{e["von"]}|{round(e.get("lat") or 0, 2)}|{round(e.get("lon") or 0, 2)}'
+    ort = re.sub(r'[^a-z0-9äöüß]', '', (e.get('ort') or '').lower().split(',')[0])
+    return f'{t}|{e.get("bis") or e["von"]}|{ort}'
 
 
 def main():
