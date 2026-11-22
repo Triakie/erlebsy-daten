@@ -1,0 +1,1202 @@
+{
+"osm:50.45804,7.22058": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.47209,6.87768": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.48589,7.23167": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.48688,7.32399": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.50815,7.30080": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.51115,7.32700": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.51166,7.29937": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.51237,7.03693": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.51473,7.29025": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.51656,7.30592": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.53267,7.06324": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.53885,7.08509": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.53901,7.08843": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.54120,7.08010": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.54143,7.09299": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.54165,7.09246": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.54639,7.24961": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.55244,7.41741": {
+"datum": "2026-11-22",
+"status": "fehler: TimeoutError"
+},
+"osm:50.55568,7.21789": {
+"datum": "2026-11-22",
+"status": "robots"
+},
+"osm:50.55708,6.76514": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.56232,7.28079": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.57292,6.76279": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.57495,7.25241": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.57795,7.24429": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.58416,7.23538": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.59778,7.21901": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.59801,7.21645": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61011,6.87554": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61058,6.67308": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.61149,6.78934": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.61834,7.02969": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61855,6.93321": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61857,6.93403": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61862,7.34672": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.61888,6.93429": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.61948,6.85379": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.62188,6.84454": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.62203,6.85374": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.62403,6.84997": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.62429,6.94950": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.62547,7.02317": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.62721,6.81286": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.63095,6.68423": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.63130,6.68170": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.63182,7.20549": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.63905,7.21556": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.64210,6.81146": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.64302,7.21822": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.64311,6.82279": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.64569,7.22535": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.64610,6.78986": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.64641,6.79958": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.64854,6.82379": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.64915,6.77576": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.65101,6.83144": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.65226,6.74321": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.65286,6.76286": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.65649,6.69557": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.65920,6.78882": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.65975,7.21398": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.66021,6.79389": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66113,6.79213": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.66210,6.79356": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.66285,6.78190": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66308,7.19050": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66616,6.80263": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66626,6.80263": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66629,6.80239": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66639,6.80211": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66639,6.80227": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66652,7.42080": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66687,6.80156": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66697,6.80190": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66734,6.80215": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66736,6.80199": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66739,6.80194": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66741,6.80188": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66743,6.80236": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66750,6.80265": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.66757,6.80136": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.66758,6.80160": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.67065,7.20427": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.67090,7.20408": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.67276,7.20252": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.67321,7.19257": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.67448,7.19226": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.67596,7.19700": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68051,7.17802": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68118,6.65584": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68121,6.65710": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68303,7.18842": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.68666,6.81641": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68969,7.02598": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.68986,6.64841": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.69017,6.64679": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.69127,6.64849": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.69377,7.02280": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.70563,7.04315": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.70648,7.13818": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.71523,7.12090": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.71799,7.08839": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.72216,7.11338": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.72524,7.09178": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.73064,7.10483": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73180,7.10616": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73202,7.09265": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.73374,7.09824": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.73470,7.10464": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73473,7.10460": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73689,7.10132": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73746,7.08631": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.73903,7.08653": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.73993,6.83544": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.74077,7.09236": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.74305,7.09707": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.75132,7.09694": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.75209,7.09544": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.75431,7.12988": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.76173,6.99847": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.76606,7.44672": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.76624,6.91566": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.77085,7.27796": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.77258,7.08213": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.77438,7.17976": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.80739,6.77240": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.81524,7.15528": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.81702,7.10706": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.81731,7.16583": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.81779,7.16524": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.81897,6.97781": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.82018,6.98389": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.82034,7.16155": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.82432,6.81148": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.82968,6.97811": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.82996,6.87461": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.83024,6.90943": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.83687,6.90568": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.84107,6.90221": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.85467,6.73182": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.86674,7.03677": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.86869,6.86489": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.86940,6.69349": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.87183,7.05311": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.87281,7.22952": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.87283,7.22789": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.88403,6.86595": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.88939,6.88071": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.89243,7.43641": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.90863,6.68934": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.91000,6.82913": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.91381,6.96970": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.91576,6.79754": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.91719,6.86566": {
+"datum": "2026-11-22",
+"status": "robots"
+},
+"osm:50.91800,6.95467": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.92044,6.91622": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.92119,6.98238": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.92133,6.91943": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.92724,7.02735": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.92744,6.65986": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93105,6.93320": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93117,6.96466": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.93295,6.95915": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93348,6.87911": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93376,6.93749": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93470,6.95044": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93479,6.95150": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93515,6.92566": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93601,6.94289": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93667,6.94616": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93677,6.94218": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93729,6.95837": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93774,6.94241": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93795,6.96186": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.93854,6.96041": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.93859,6.95399": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93867,6.82445": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93902,6.95427": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93909,6.94463": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93914,6.94518": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93975,6.95931": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.93976,6.95484": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.94037,6.94683": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.94037,6.95024": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.94056,6.95024": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.94060,6.95891": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.94079,6.94981": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.94083,6.96002": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.94202,7.01991": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.94628,6.93702": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.95043,6.91939": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.95124,6.96707": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95166,6.91223": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95474,6.93877": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95641,6.96770": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95803,6.97246": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95845,6.97241": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.95908,6.97337": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:50.95968,6.94647": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96445,6.90927": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96449,7.13582": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96453,6.60933": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96505,7.16437": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96573,6.94778": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96711,7.01058": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.96751,7.13539": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.97072,7.16147": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.98138,6.90035": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.98296,7.07125": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.98338,7.03201": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.98367,7.40968": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.98416,7.40898": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:50.99088,7.13057": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:50.99092,7.13435": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.99410,7.06137": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.99488,7.15381": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.99803,7.08758": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.99878,7.04596": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:50.99987,7.03528": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:51.00302,6.56527": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.00769,6.63835": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.00869,7.08404": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.01174,7.35024": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.01647,6.88987": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.03118,7.05513": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.03428,6.98151": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.03599,7.03327": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.03611,7.00297": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.03634,7.11669": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.03945,6.68682": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.04632,6.66442": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.04718,6.66170": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.05730,6.92241": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.05984,7.13100": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.06160,6.65094": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.07006,7.01391": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.07032,7.01950": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.07395,6.99660": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.08526,6.90030": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.08574,6.58989": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.08708,7.19572": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.09066,6.58697": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.09578,6.83092": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.10184,7.02051": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.11061,6.94863": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.12042,6.85113": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.12175,6.84794": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.12935,6.87283": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.13170,7.03363": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.13782,7.11053": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.14133,7.07215": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.14467,6.65770": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.15210,6.64326": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.15228,6.64419": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.15973,6.87877": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16166,6.87161": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16170,6.86934": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16188,7.11453": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:51.16339,6.83899": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16399,6.83978": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16670,6.94875": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16716,6.86217": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16795,6.92770": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16881,6.85901": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.16968,6.85086": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.17246,6.64753": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.17453,6.67791": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.17708,7.18519": {
+"datum": "2026-11-22",
+"status": "fehler: URLError"
+},
+"osm:51.17836,6.95663": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.17951,7.07018": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.18057,7.04335": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.19135,7.11266": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.19368,6.88669": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.19376,7.11756": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.19407,6.88516": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.19416,6.69830": {
+"datum": "2026-11-22",
+"status": "ok"
+},
+"osm:51.19573,6.69609": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.20192,7.01734": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.20271,7.16619": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.20347,7.07376": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.20376,6.83694": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.20497,7.13882": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.20971,7.07244": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21298,7.08180": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21478,6.75316": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21664,6.77397": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21689,6.76485": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21807,6.94882": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.21982,6.76671": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22139,6.95851": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22219,6.77302": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22237,6.76990": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22254,6.77274": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22383,6.77109": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22433,6.81027": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.22450,6.78574": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22510,6.77827": {
+"datum": "2026-11-22",
+"status": "fehler: HTTPError"
+},
+"osm:51.22675,7.07110": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22704,6.80252": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.22719,6.80956": {
+"datum": "2026-11-22",
+"status": "nichts"
+},
+"osm:51.23765,6.85885": {
+"datum": "2026-11-22",
+"status": "nichts"
+}
+}
